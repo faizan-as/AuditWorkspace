@@ -574,7 +574,7 @@ As Solution Architect / GenAI Architect, the contribution included:
 
 ---
 
-## 22. Interview-Ready Project Summary
+## 22. Project Summary
 
 I designed an AI-powered Audit Workspace for financial auditors. The goal was to centralize audit artifacts, automate evidence extraction, and allow auditors to interact with audit documents using natural language.
 
