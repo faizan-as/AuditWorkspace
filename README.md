@@ -276,6 +276,31 @@ Every action is tracked using:
 - CorrelationId
 - CausationId
 
+## Observability Flow
+  User
+ │
+ ▼
+Frontend (React/Angular)
+ │
+ ▼
+API Layer (FastAPI/.NET)
+ │
+ ▼
+Agent / Orchestrator
+ │
+ ├── Azure OpenAI
+ ├── Azure AI Search
+ └── Enterprise Systems
+        │
+        ▼
+Application Insights
+        │
+        ▼
+Log Analytics
+        │
+        ▼
+Azure Monitor Dashboard
+
 ---
 
 # Governance & Responsible AI
@@ -314,7 +339,64 @@ The platform delivers:
 - Responsible AI adoption
 
 ---
+# AI Evaluation & AgentOps Strategy
+Document Sources
+(SharePoint, Blob, Files)
+           │
+           ▼
+Azure AI Search
+(Index + Vector Store)
+           │
+           ▼
+Azure OpenAI
+(LLM Layer)
+           │
+           ▼
+Document Analyzer API
+(Container Apps / AKS)
+           │
+           ▼
+Users & Applications
 
+Observability Layer
+(App Insights + Azure Monitor + Log Analytics)
+
+Governance Layer
+(Purview + Entra ID + Key Vault)
+
+Evaluation Layer
+(Azure AI Foundry Evaluations)
+---
+Agent Development
+  → Python, FastAPI, LangGraph
+
+AI Layer
+  → Azure AI Foundry, Azure OpenAI
+
+RAG Layer
+  → Azure AI Search, Document Intelligence
+
+Memory Layer
+  → Cosmos DB, Redis
+
+Enterprise Tools
+  → MCP Servers, API Management
+
+Messaging
+  → Service Bus, Event Grid
+
+Deployment
+  → Docker, ACR, AKS
+
+Security
+  → Entra ID, Key Vault
+
+Observability
+  → App Insights, Azure Monitor
+
+AgentOps
+  → Foundry Evaluation, RAGAS, DeepEval, Azure DevOps
+---
 # 60-Second Project Summary
 
 I architected Audit Workspace, an Azure-based AI-powered platform for financial auditors. The solution centralizes audit evidence, uses Azure AI Document Intelligence for document extraction, Azure AI Search for retrieval, and Microsoft Foundry with a governed multi-agent architecture for audit assistance. I designed the end-to-end architecture including RAG pipelines, agent governance, memory architecture, evaluation frameworks, observability, security, and Responsible AI controls. The platform provides grounded audit Q&A, evidence extraction, risk detection, and validation workflows while maintaining full traceability, governance compliance, and mandatory human oversight for audit conclusions.
